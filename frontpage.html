@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arpan Mandal - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .greeting {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+
+        .name {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            color: #b0b0b0;
+        }
+
+        .profiles-container {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-card {
+            background: #262626;
+            border-radius: 15px;
+            padding: 40px 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 3px solid transparent;
+            min-width: 300px;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: #ffffff;
+            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+            background: #2d2d2d;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover .profile-image {
+            border-color: #4CAF50;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+        }
+
+        .profile-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .profile-card:hover .profile-title {
+            color: #4CAF50;
+        }
+
+        .profile-subtitle {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+        }
+
+        .profile-button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .profile-card:hover .profile-button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile-button:hover {
+            background: #45a049;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .greeting {
+                font-size: 1.5rem;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .question {
+                font-size: 1.2rem;
+            }
+
+            .profiles-container {
+                gap: 30px;
+            }
+
+            .profile-card {
+                padding: 30px 40px;
+                min-width: 250px;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-title {
+                font-size: 1.6rem;
+            }
+
+            .profile-button {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="greeting">Hello there 👋</h1>
+        <h2 class="name">I am Arpan Mandal</h2>
+        <p class="question">You want me as</p>
+    </div>
+
+    <div class="profiles-container">
+        <div class="profile-card" id="programmerCard">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%231a1a1a'/%3E%3Ccircle cx='100' cy='100' r='90' fill='%23262626'/%3E%3Crect x='50' y='70' width='100' height='60' fill='%234CAF50' rx='5'/%3E%3Crect x='55' y='75' width='90' height='5' fill='%23222'/%3E%3Cline x1='60' y1='88' x2='90' y2='88' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='60' y1='95' x2='110' y2='95' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='60' y1='102' x2='80' y2='102' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='60' y1='109' x2='100' y2='109' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='60' y1='116' x2='70' y2='116' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='65' cy='65' r='8' fill='%234CAF50'/%3E%3Ccircle cx='100' cy='60' r='6' fill='%234CAF50'/%3E%3Ccircle cx='130' cy='68' r='7' fill='%234CAF50'/%3E%3C/svg%3E" alt="Programmer" class="profile-image">
+            <h3 class="profile-title">Programmer</h3>
+            <p class="profile-subtitle">Web Developer & Coder</p>
+            <button class="profile-button">Enter</button>
+        </div>
+
+        <div class="profile-card" id="authorCard">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%231a1a1a'/%3E%3Ccircle cx='100' cy='100' r='90' fill='%23262626'/%3E%3Crect x='60' y='50' width='80' height='100' fill='%23FF9800' rx='3'/%3E%3Crect x='65' y='55' width='70' height='90' fill='%23FFF8E1' rx='2'/%3E%3Cline x1='75' y1='70' x2='125' y2='70' stroke='%23666' stroke-width='2'/%3E%3Cline x1='75' y1='80' x2='125' y2='80' stroke='%23666' stroke-width='2'/%3E%3Cline x1='75' y1='90' x2='125' y2='90' stroke='%23666' stroke-width='2'/%3E%3Cline x1='75' y1='100' x2='115' y2='100' stroke='%23666' stroke-width='2'/%3E%3Cline x1='75' y1='110' x2='125' y2='110' stroke='%23666' stroke-width='2'/%3E%3Cline x1='75' y1='120' x2='120' y2='120' stroke='%23666' stroke-width='2'/%3E%3Cpath d='M 145 135 L 150 145 L 145 145 Z' fill='%23FF9800'/%3E%3Ccircle cx='75' cy='45' r='5' fill='%23FFD700'/%3E%3Ccircle cx='125' cy='48' r='4' fill='%23FFD700'/%3E%3C/svg%3E" alt="Author" class="profile-image">
+            <h3 class="profile-title">Author</h3>
+            <p class="profile-subtitle">Writer & Storyteller</p>
+            <button class="profile-button">Enter</button>
+        </div>
+    </div>
+
+    <script>
+        const programmerCard = document.getElementById('programmerCard');
+        const authorCard = document.getElementById('authorCard');
+
+        programmerCard.addEventListener('click', function() {
+            window.location.href = 'programmer.html';
+        });
+
+        authorCard.addEventListener('click', function() {
+            window.location.href = 'author.html';
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '1') {
+                window.location.href = 'programmer.html';
+            } else if (event.key === '2') {
+                window.location.href = 'author.html';
+            }
+        });
+    </script>
+</body>
+</html>
