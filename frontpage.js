@@ -19,13 +19,11 @@ function toggleMusic() {
 }
 
 // Function to play click sound
-function playClick(event, url) {
-    if (event) event.preventDefault(); // stop immediate navigation
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log('Click sound failed:', e));
-    setTimeout(() => {
-        window.location.href = url;
-    }, 200); // delay ~200ms so sound can be heard
+function playClick() {
+    clickSound.currentTime = 0; // Reset to start
+    clickSound.play().catch(e => {
+        console.log('Click sound failed:', e);
+    });
 }
 
 // Auto-start music on first user interaction (optional)
