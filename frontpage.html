@@ -4,192 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arpan Mandal - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .landing {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            min-height: 100vh;
-            animation: fadeIn 0.8s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .main-logo {
-            width: 120px;
-            height: 120px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .main-logo:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .main-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .greeting {
-            color: white;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            font-weight: 300;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        h1 {
-            color: white;
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-weight: 700;
-        }
-
-        .subtitle {
-            color: rgba(255,255,255,0.95);
-            font-size: 1.3em;
-            margin-bottom: 60px;
-            font-weight: 300;
-        }
-
-        .portfolio-options {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 900px;
-        }
-
-        .portfolio-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            width: 320px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #11998e, #38ef7d);
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-        }
-
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #11998e, #38ef7d);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2.5em;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .card-icon:hover {
-            transform: scale(1.15);
-        }
-
-        .card-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .portfolio-card h2 {
-            color: #11998e;
-            margin-bottom: 15px;
-            font-size: 1.6em;
-        }
-
-        .portfolio-card p {
-            color: #666;
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-            
-            .greeting {
-                font-size: 1.2em;
-            }
-            
-            .portfolio-options {
-                gap: 20px;
-            }
-            
-            .portfolio-card {
-                width: 100%;
-                max-width: 350px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="frontpage.css">
 </head>
 <body>
-    <div class="landing"> 
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="sounds/background-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Click Sound -->
+    <audio id="clickSound">
+        <source src="sounds/click.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">🔇</button>
+
+    <div class="landing">
         <p class="greeting">Hi, I am</p>
-        <a href="https://github.com/am1456" target="_blank" class="main-logo">
-            <!-- Replace 'logo.png' with your actual logo filename -->
+        <a href="https://github.com/am1456" target="_blank" class="main-logo" onclick="playClick()">
             <img src="logo.png" alt="Arpan Mandal Logo">
         </a>
         
-       
         <h1>Arpan Mandal</h1>
-        <h2> Welcome to my Portfolio Website</h2>
-        <p class="subtitle">You want to discover my journey as </p>
+        <p class="welcome">Welcome to My Portfolio Website</p>
+        <p class="subtitle">Discover my journey as a developer and author</p>
         
         <div class="portfolio-options">
-            <a href="developer.html" class="portfolio-card">
+            <a href="developer.html" class="portfolio-card" onclick="playClick()">
                 <div class="card-icon">
                     <img src="webdev.png" alt="Developer"> 
                 </div>
@@ -197,7 +39,7 @@
                 <p>Explore my web development projects, skills, and technical expertise in building modern applications</p>
             </a>
 
-            <a href="author.html" class="portfolio-card">
+            <a href="author.html" class="portfolio-card" onclick="playClick()">
                 <div class="card-icon">
                     <img src="author.png" alt="Author">
                 </div>
@@ -206,5 +48,7 @@
             </a>
         </div>
     </div>
+
+    <script src="frontpage.js"></script>
 </body>
 </html>
